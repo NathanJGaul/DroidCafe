@@ -133,8 +133,9 @@
             android:id="@+id/sameday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/delivery_sameday_text"
-            android:onClick="onRadioButtonClicked" />
+            android:checked="true"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/delivery_sameday_text" />
 
         <RadioButton
             android:id="@+id/nextday"
