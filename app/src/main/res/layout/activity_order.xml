@@ -31,6 +31,69 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/address_label"
         app:layout_constraintStart_toEndOf="@+id/address_label" />
 
+    <EditText
+        android:id="@+id/phone_text"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:ems="10"
+        android:hint="@string/enter_phone_hint"
+        android:inputType="phone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/phone_label"
+        app:layout_constraintStart_toEndOf="@+id/phone_label" />
+
+    <EditText
+        android:id="@+id/note_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:ems="10"
+        android:hint="@string/enter_note_hint"
+        android:inputType="textMultiLine|textCapSentences"
+        app:layout_constraintBaseline_toBaselineOf="@+id/note_label"
+        app:layout_constraintStart_toEndOf="@+id/note_label" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/delivery_label"
+        app:layout_constraintTop_toBottomOf="@+id/delivery_label">
+
+        <RadioButton
+            android:id="@+id/sameday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/delivery_sameday_text" />
+
+        <RadioButton
+            android:id="@+id/nextday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/delivery_nextday_text" />
+
+        <RadioButton
+            android:id="@+id/pickup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/delivery_pickup_text" />
+    </RadioGroup>
+
+    <Spinner
+        android:id="@+id/label_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/phone_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/phone_text"
+        app:layout_constraintTop_toTopOf="@+id/phone_text" />
+
     <TextView
         android:id="@+id/cart_message"
         android:layout_width="wrap_content"
@@ -76,18 +139,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/address_text" />
 
-    <EditText
-        android:id="@+id/phone_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:ems="10"
-        android:hint="@string/enter_phone_hint"
-        android:inputType="phone"
-        app:layout_constraintBaseline_toBaselineOf="@+id/phone_label"
-        app:layout_constraintStart_toEndOf="@+id/phone_label" />
-
     <TextView
         android:id="@+id/note_label"
         android:layout_width="wrap_content"
@@ -98,18 +149,6 @@
         android:text="Note"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phone_label" />
-
-    <EditText
-        android:id="@+id/note_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:ems="10"
-        android:hint="@string/enter_note_hint"
-        android:inputType="textMultiLine|textCapSentences"
-        app:layout_constraintBaseline_toBaselineOf="@+id/note_label"
-        app:layout_constraintStart_toEndOf="@+id/note_label" />
 
     <TextView
         android:id="@+id/delivery_label"
@@ -122,34 +161,5 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/note_text" />
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/delivery_label"
-        app:layout_constraintTop_toBottomOf="@+id/delivery_label">
-
-        <RadioButton
-            android:id="@+id/sameday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:onClick="onRadioButtonClicked"
-            android:text="@string/delivery_sameday_text" />
-
-        <RadioButton
-            android:id="@+id/nextday"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/delivery_nextday_text"
-            android:onClick="onRadioButtonClicked" />
-
-        <RadioButton
-            android:id="@+id/pickup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/delivery_pickup_text"
-            android:onClick="onRadioButtonClicked" />
-    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
